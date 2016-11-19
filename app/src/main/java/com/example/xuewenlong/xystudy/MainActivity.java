@@ -30,7 +30,7 @@ public class MainActivity extends Activity implements View.OnTouchListener{
     int[] responseLocations = new int[2];
     float x,y = 100;
 
-    //用子线程来发送采集到的MotionEvent事件
+    //鐢ㄥ瓙绾跨▼鏉ュ彂閫侀噰闆嗗埌鐨凪otionEvent浜嬩欢
     class AuxiliaryThread extends Thread {
         public Handler tHandler;
         private Instrumentation mInst = new Instrumentation();
@@ -82,7 +82,7 @@ public class MainActivity extends Activity implements View.OnTouchListener{
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        //模拟点击click事件.
+                        //妯℃嫙鐐瑰嚮click浜嬩欢
                         x = Float.valueOf(xEditText.getText().toString());
                         y = Float.valueOf(yEditText.getText().toString());
                         Instrumentation mInst = new Instrumentation();
@@ -125,7 +125,7 @@ public class MainActivity extends Activity implements View.OnTouchListener{
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        //获取一下响应窗口的坐标
+        //鑾峰彇涓�涓嬪搷搴旂獥鍙ｇ殑鍧愭爣
         if (hasFocus) {
             responseSquare.getLocationOnScreen(responseLocations);
             ((TextView) findViewById(R.id.markStart)).setText("(" + responseLocations[0] + "," + responseLocations[1] + ")");
