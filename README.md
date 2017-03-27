@@ -10,7 +10,7 @@
 
 <br>
 
-## **一、使用shell命令**
+### **一、使用shell命令**
 
 使用android自带的adb shell，里面自带一个input工具，使用方法如下：
 
@@ -30,7 +30,7 @@ input tap 100 200  #在屏幕坐标(100, 200)处点击
 
 <br>
 
-## **二、使用 Instrumentation**
+### **二、使用 Instrumentation**
 
 Instrumentation本身是Android用来做测试的工具，可以通过它监测系统与应用程序之间的交互。详情可以参考官方文档[\[Test Your App\]](https://developer.android.com/studio/test/index.html)。我们这里只关注怎么使用Instrumentation产生发送按键或者触屏事件。
 
@@ -67,7 +67,7 @@ Demo源码下载： https://github.com/iTimeTraveler/XYStudy
 
 <br>
 
-## **三、使用Android内部API**
+### **三、使用Android内部API**
 
 在Android系统中，有些内部的API提供注入事件的方法。因为是内部API，在不同版本上可能变化比较大。使用如果想在普通App中使用，可能需要通过反射机制来调用。
 
@@ -108,14 +108,15 @@ InputManager im = (InputManager) getSystemService(Context.INPUT_SERVICE);
 
 <br>
 
-## **四、可以考虑使用Monkey测试框架**
+### **四、可以考虑使用Monkey测试框架**
 
 这种方案就是希望能够模拟Android Monkey的测试方法，不过博主并没有来得及对这方面进行深入的研究，可以参考这篇文章[Android Monkey源码解析](http://blog.csdn.net/xiaodanpeng/article/details/9154003)
 
 <br>
 <br>
 
- ## **【参考资料】：**
+### **【参考资料】：**
+
 1、[Android模拟产生事件](http://www.race604.com/android-inject-input-event/)
 2、[Android 模拟键盘鼠标事件（Socket+Instrumentation实现）](http://blog.csdn.net/zhou0707/article/details/7325144)
 3、[Android Monkey源码解析](https://getpocket.com/a/read/523013957)
