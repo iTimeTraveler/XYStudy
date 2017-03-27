@@ -14,14 +14,14 @@
 
 使用android自带的adb shell，里面自带一个input工具，使用方法如下：
 
-```
+```shell
 adb shell #进入系统
 input keyevent KEYCODE_BACK  #模拟按返回键
 input keyevent KEYCODE_HOME  #模拟按Home键
 ```
 还可以直接输入点击屏幕的事件，模拟点击屏幕：
 
-```
+```shell
 input tap 100 200  #在屏幕坐标(100, 200)处点击 
 ```
 详细的用法如下：
@@ -36,13 +36,14 @@ Instrumentation本身是Android用来做测试的工具，可以通过它监测�
 
 它可以发送按键：
 
-```
+```java
 Instrumentation mInst = new Instrumentation();  
 mInst.sendKeyDownUpSync(KeyEvent.KEYCODE_CAMERA);  
 ```
 
 也可以发送触屏事件：
-```
+
+```java
 Instrumentation mInst = new Instrumentation();  
 mInst.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),  
     SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN, x, y, 0);    //x,y 即是事件的坐标
@@ -51,15 +52,16 @@ mInst.sendPointerSync(MotionEvent.obtain(SystemClock.uptimeMillis(),
 ```
 与Shell工具一样，还有类似sendStringSync()发送文本，sendTrackballEventSync()发送轨迹球事件等方法。
 
-```
+```java
 sendCharacterSync(int keyCode)            //用于发送指定KeyCode的按键
 sendKeyDownUpSync(int key)                //用于发送指定KeyCode的按键
 sendPointerSync(MotionEvent event)     	  //用于模拟Touch
 sendStringSync(String text)               //用于发送字符串
 ```
+
 需要注意的是，这些方法均***不可以在UI主线程中执行***，必须放到子线程中调用，否则就会报错。另外，使用上面的方法，需要在AndroidManifast.xml中申明如下权限：
 
-```
+```xml
 <uses-permission android:name="android.permission.INJECT_EVENTS"/>  
 ```
 
@@ -73,7 +75,7 @@ Demo源码下载： https://github.com/iTimeTraveler/XYStudy
 
 在Android API 16之前，WindownManager有相应的方法提供注入事件的方法，如下：
 
-```
+```java
 IBinder wmbinder = ServiceManager.getService("window");  
 IWindowManager wm = IWindowManager.Stub.asInterface(wmbinder); //pointer  
 wm.injectPointerEvent(myMotionEvent, false); //key  
@@ -83,7 +85,7 @@ wm.injectTrackballEvent(myMotionEvent, false);
 ```
 在API 15之后，引入了InputManager，把上面的哪些injectXXXEvent()方法从WindowManager中移除了。使用方法类似：
 
-```
+```java
 IBinder imBinder = ServiceManager.getService("input");  
 IInputManager im = IInputManager.Stub.asInterface(imBinder);
 
@@ -99,11 +101,13 @@ im.injectInputEvent(keyEvent, InputManager.INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINI
 motionEvent.setSource(InputDevice.SOURCE_TOUCHSCREEN);  
 im.injectInputEvent(motionEvent, InputManager.INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH);  
 ```
+
 从API 16开始，InputManager就成了一个公开的类了，可以通过如下方法获得InputManager实例：
 
-```
+```java
 InputManager im = (InputManager) getSystemService(Context.INPUT_SERVICE);  
 ```
+
 注意，使用injectEvent()同样需要申明**android:name="android.permission.INJECT_EVENTS"**权限。
 
 <br>
