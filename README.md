@@ -26,7 +26,7 @@ input tap 100 200  #在屏幕坐标(100, 200)处点击
 ```
 详细的用法如下：
 
-> ![这里写图片描述](http://img.blog.csdn.net/20160602113300558)
+> ![](http://img.blog.csdn.net/20160602113300558)
 
 <br>
 
@@ -117,6 +117,6 @@ InputManager im = (InputManager) getSystemService(Context.INPUT_SERVICE);
 
 ### **【参考资料】：**
 
-1、[Android模拟产生事件](http://www.race604.com/android-inject-input-event/)
-2、[Android 模拟键盘鼠标事件（Socket+Instrumentation实现）](http://blog.csdn.net/zhou0707/article/details/7325144)
-3、[Android Monkey源码解析](https://getpocket.com/a/read/523013957)
+1. [Android模拟产生事件](http://www.race604.com/android-inject-input-event/)
+2. [Android 模拟键盘鼠标事件（Socket+Instrumentation实现）](http://blog.csdn.net/zhou0707/article/details/7325144)
+3. [Android Monkey源码解析](https://getpocket.com/a/read/523013957)
