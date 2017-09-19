@@ -28,7 +28,6 @@ input tap 100 200  #在屏幕坐标(100, 200)处点击
 
 ![](http://img.blog.csdn.net/20160602113300558)
 
-<br>
 
 ### **二、使用 Instrumentation**
 
