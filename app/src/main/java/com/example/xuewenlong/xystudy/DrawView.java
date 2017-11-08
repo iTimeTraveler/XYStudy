@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by xuewenlong on 2016/6/1.
+ * Created by iTimeTraveler on 2016/6/1.
  */
 public class DrawView extends View {
     public float currentX = 40;
