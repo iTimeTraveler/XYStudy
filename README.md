@@ -58,7 +58,7 @@ sendPointerSync(MotionEvent event)     	  //用于模拟Touch
 sendStringSync(String text)               //用于发送字符串
 ```
 
-需要注意的是，这些方法均***不可以在UI主线程中执行***，必须放到子线程中调用，否则就会报错。另外，使用上面的方法，需要在AndroidManifast.xml中申明如下权限：
+需要注意的是，这些方法均**不可以在UI主线程中执行**，必须放到子线程中调用，否则就会报错。另外，使用上面的方法，需要在AndroidManifast.xml中申明如下权限：
 
 ```xml
 <uses-permission android:name="android.permission.INJECT_EVENTS"/>  
