@@ -1,5 +1,5 @@
 # XYStudy
-【Android】技术调研：用代码模拟屏幕点击、触摸事件Demo
+
 
 原始文章： http://blog.csdn.net/u010983881/article/details/51565361
 
