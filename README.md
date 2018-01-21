@@ -1,7 +1,7 @@
 # XYStudy
 
 
-原始文章： http://blog.csdn.net/u010983881/article/details/51565361
+原始文章： [【Android】技术调研：用代码模拟屏幕点击、触摸事件](http://blog.csdn.net/u010983881/article/details/51565361)
 
 > 在Android中，有些场景需要使用代码来模拟人的操作，比如微信自动抢红包、UI测试等都需要模拟实现点击事件（Click）、触摸事件（Touch）、键盘事件（KeyBoard）等。那么，有没有现成的方案可以实现呢？答案当然是肯定的啦，往下看。
 
@@ -115,7 +115,6 @@ InputManager im = (InputManager) getSystemService(Context.INPUT_SERVICE);
 
 这种方案就是希望能够模拟Android Monkey的测试方法，不过博主并没有来得及对这方面进行深入的研究，可以参考这篇文章[Android Monkey源码解析](http://blog.csdn.net/xiaodanpeng/article/details/9154003)
 
-<br>
 <br>
 
 ### **【参考资料】：**
